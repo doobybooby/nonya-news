@@ -86,12 +86,12 @@ export const InfoBanner = () => {
         {/* <input type="text" /> */}
       </div>
       <div className='nav-time'>
-        { date }
         <img src={ClockIcon} width='30%'/>
+        { date }
       </div>
       <div>
-        <p>{ weather.current &&  weather.current.temp }°F </p>
         <img src={DrizzleIcon} width='30%'/>
+        <p>{ weather.current &&  weather.current.temp }°F </p>
         {/* <p>{ weather.current &&  weather.current.weather[0].main }</p> */}
       </div>
       <AvalancheData/>
