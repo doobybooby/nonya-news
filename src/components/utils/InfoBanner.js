@@ -94,7 +94,7 @@ export const InfoBanner = () => {
         <p>{ weather.current &&  weather.current.temp }°F </p>
         {/* <p>{ weather.current &&  weather.current.weather[0].main }</p> */}
       </div>
-      <AvalancheData/>
+      <AvalancheData className='nav-avax'/>
     </div>
   )
 }

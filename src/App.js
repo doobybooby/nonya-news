@@ -3,8 +3,9 @@ import Nav from './components/Nav';
 import { Routes, Route } from 'react-router-dom'
 import { Home } from './components/pages/Home';
 import { Blogs } from './components/pages/Blogs';
-import { Oped } from './components/pages/Oped';
 import { InfoBanner } from './components/utils/InfoBanner';
+import About from './components/pages/About';
+import Footer from './components/utils/Footer';
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/blogs' element={<Blogs/>} />
-        <Route path='/oped' element={<Oped/>} />
+        <Route path='/about' element={<About/>} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
