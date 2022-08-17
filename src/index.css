@@ -16,6 +16,13 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 900;
+}
+
 .t2rem {
   font-size: 1.75rem;
 }
@@ -30,10 +37,9 @@ code {
   flex-direction: column;
 }
 
-.info-banner {
-  background-color: black;
-  color: white;
-  text-transform: full-width;
+.banner-wrapper img, .banner-wrapper p{
+  /* margin-top: 1rem; */
+  align-self: center;
 }
 
 .flex-row {
@@ -42,11 +48,21 @@ code {
   justify-content: space-around;
 }
 
+.info-banner {
+  padding-top: 1.5rem;
+  background-color: #5CC8FF;
+  text-transform: full-width;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+}
+
+
+
 .nav {
   align-items: center;
   font-family: 'Shadows Into Light', cursive;
-  padding: 1rem;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .nav h1 {
@@ -59,6 +75,16 @@ nav {
   border-top: 3px solid black;
   border-bottom: 3px solid black;
   padding: 1rem 0;
+}
+
+.nav-item:hover {
+  font-size: 2rem;
+}
+
+.active {
+  background-color: black;
+  font-size: 2.5rem;
+  color: white;
 }
 
 ul {
@@ -76,7 +102,7 @@ ul {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 2.5rem;
   border-bottom: 1px solid black;
 }
 
@@ -85,8 +111,51 @@ ul {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.guardian {
+.guardian, .theguardian {
   background-color: rgb(16, 41, 95);
-  color: white;
   font-family: Georgia, serif;
 }
+
+.cnn {
+  background-color: rgb(198, 23, 7)
+}
+
+.thewashingtonpost {
+  background-color: white;
+}
+
+.cnbc {
+  background-color: rgb(34, 84, 143);
+}
+
+[class*='nbcsports'] {
+  background-color: black;
+}
+
+.motor1 {
+  background-color: black;
+}
+
+.wccftech {
+  background-color: black;
+}
+
+.nflnews{
+  background-color: rgb(18, 50, 100);
+}
+
+.cbssports {
+  background-color: rgb(28, 72, 198);
+}
+
+.newyorkpost {
+  background-color: rgb(188, 64, 58);
+}
+
+.news-content {
+  background-color: white;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+

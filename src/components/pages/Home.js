@@ -3,6 +3,22 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import NYTLogo from '../../images/NewYorkTimes.svg.png'
 import GuardianLogo from '../../images/TheGuardianLogo.jpeg'
+import CnnLogo from '../../images/cnnLogo.png'
+import YoutubeLogo from '../../images/youtubeLogo.png'
+import WashingtonsPostLogo from '../../images/washingtonsPostLogo.png'
+import CnbcLogo from '../../images/cnbcLogo.png'
+import UsaTodayLogo from '../../images/usaTodayLogo.png'
+import BuzzfeedLogo from '../../images/buzzfeedLogo.jpeg'
+import NbcSportsLogo from '../../images/nbcSportsLogo.png'
+import Motor1Logo from '../../images/motor1Logo.png'
+import AbcLogo from '../../images/abcLogo.png'
+import FoxLogo from '../../images/foxLogo.jpeg'
+import NYPostLogo from '../../images/newYorkPostLogo.png'
+import CbsSportsLogo from '../../images/cbsSportsLogo.png'
+import NflLogo from '../../images/nflLogo.png'
+import wccfTech from '../../images/wccftech.png'
+import GoogleNewsLogo from '../../images/googleNewsLogo.png'
+import NonyaNewsLogo from '../../images/nonyaNewsLogo.png'
 // collapsed news 
 // {
 //   title:''
@@ -23,7 +39,8 @@ export const Home = () => {
   const urls = {
     nytimes: 'https://api.nytimes.com/svc/topstories/v2/home.json',
     guardian: 'https://content.guardianapis.com/search?page=1',
-    mediastack: 'http://api.mediastack.com/v1/news'
+    mediastack: 'http://api.mediastack.com/v1/news',
+    newsApi: 'https://newsapi.org/v2/top-headlines',
   }
   
   const fetchMediastack = async()=> {
@@ -41,7 +58,6 @@ export const Home = () => {
       params: {
         'api-key': process.env.REACT_APP_API_KEY_GUARDIAN
       }
-      
     })
     setCollectiveNews(prevState => { return {...prevState, guardian:response.data.response.results}})
   }
@@ -54,13 +70,24 @@ export const Home = () => {
     })
     setCollectiveNews(prevState => { return {...prevState, nyTimes:response.data.results}})
   }
+  
+  const fetchNewsApi = async()=> {
+    const response = await axios.get(urls.newsApi, { 
+      params: {
+        'apiKey': process.env.REACT_APP_API_KEY_NEWSAPI,
+        'country': 'us'
+      }
+    })
+    setCollectiveNews(prevState => { return {...prevState, newsApi:response.data.articles}})
+  }
 
   useEffect(()=> {
     const fetchAllNews = async()=> {
       await Promise.all([
-        await fetchNYTimes(),
-        await fetchGuardian(),
-        await fetchMediastack()
+        // await fetchNYTimes(),
+        // await fetchGuardian(),
+        // await fetchMediastack(),
+        await fetchNewsApi()
       ])
     }
     fetchAllNews()
@@ -118,25 +145,67 @@ export const Home = () => {
             publishedAt: singleNews.published_at,
             category: singleNews.category
           }
-          console.log(singleNews)
+          if(!newsDatabase.find( news => news.url === inLine.url))
+            setNewsDatabase(prevState => [...prevState, inLine])
+        })
+      }
+      if( newsPublisher === 'newsApi'){
+        collectiveNews[newsPublisher].map( singleNews => {
+          const findLogo = (publisher)=> {
+            if(publisher === 'the guardian' || publisher === 'guardian') return GuardianLogo
+            else if (publisher === 'cnn') return CnnLogo
+            else if ( publisher === 'youtube' ) return YoutubeLogo
+            else if ( publisher === 'new york times' ) return NYTLogo
+            else if ( publisher === 'the washington post' ) return WashingtonsPostLogo
+            else if ( publisher === 'cnbc' ) return CnbcLogo
+            // else if ( publisher === 'newyorktimes' ) return NYTLogo
+            else if ( publisher === 'usa today' ) return UsaTodayLogo
+            else if ( publisher === 'buzzfeed' ) return BuzzfeedLogo
+            else if ( publisher === 'nbcsports.com' ) return NbcSportsLogo
+            else if ( publisher === 'abc news' ) return AbcLogo
+            else if ( publisher === 'fox business' ) return FoxLogo
+            else if ( publisher === 'new york post' ) return NYPostLogo
+            else if ( publisher === 'cbs sports' ) return CbsSportsLogo
+            else if ( publisher === 'nfl news' ) return NflLogo
+            else if ( publisher === 'wccftech' ) return wccfTech
+            else if ( publisher === 'google news' ) return GoogleNewsLogo
+            else return NonyaNewsLogo
+            
+          }
+          
+          const inLine = {
+            title: singleNews.title,
+            imgLocation: singleNews.urlToImage,
+            description: singleNews.description,
+            url: singleNews.url,
+            author: singleNews.author,
+            publisher: ((singleNews.source.name).toLowerCase()).split(' ').join(''),
+            publishedAt: singleNews.publishedAt,
+            category: '',
+            logoUrl: findLogo((singleNews.source.name).toLowerCase())
+          }
           if(!newsDatabase.find( news => news.url === inLine.url))
             setNewsDatabase(prevState => [...prevState, inLine])
         })
       }
     }
   }
+
   return (
     <div>
       <ul className='news-list flex-col'>
         {
           newsDatabase.map(news => (
             <li key={news.url} className={`news-card ${news.publisher}`}>
-              <img src={news.logoUrl} alt=""  width='100%' className='news-logo'/>
-              <h1 className='t2rem'>{ news.title }</h1>
-              <img src={news.imgLocation} alt="img" width='100%' />
-              <h3 className='abstract'>{ news.description }</h3>
-              <a href={news.url}>...Read more</a>
-              <p className='byline'>{ news.author }</p>
+              {/* <p>{news.publisher}</p> */}
+              <img src={news.logoUrl} alt=""  width='100%' height='20%' className='news-logo'/>
+              <div className='news-content'>
+                <h1 className='t2rem'>{ news.title }</h1>
+                <img src={news.imgLocation} alt="img" width='100%' />
+                <h3 className='abstract'>{ news.description }</h3>
+                <a href={news.url}>...Read more</a>
+                <p className='byline'>{ news.author }</p>
+              </div>
             </li>
           ))
         }

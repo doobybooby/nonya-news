@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import DrizzleIcon from '../images/icons/drizzle.png'
+import { AvalancheData } from './AvalancheData'
 
 export const InfoBanner = () => {
   const [ date, setDate ] = useState('')
@@ -66,14 +68,23 @@ export const InfoBanner = () => {
         }
       }
     )
+    console.log(weather)
     setWeather(response.data)
   }
 
   return (
-    <div className='flex-row info-banner'>
-      <p>{ date }</p>
-      <p>{ weather.current &&  weather.current.temp }°F</p>
-      <p>{ weather.current &&  weather.current.weather[0].main }</p>
+    <div className='flex-col banner-wrapper'>
+      <div className='flex-row info-banner'>
+        <div>
+          { date.split(' ').map( info => <p>{info}</p>) }
+        </div>
+        <div>
+          <img src={DrizzleIcon} width='30%'/>
+          {/* <p>{ weather.current &&  weather.current.weather[0].main }</p> */}
+          <p>{ weather.current &&  weather.current.temp }°F </p>
+        </div>
+        <AvalancheData/>
+      </div>
     </div>
   )
 }

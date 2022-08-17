@@ -7,9 +7,9 @@ function Nav() {
       <h1>NONYA NEWS</h1>
       <h2>Where you read other people's business</h2>
       <nav className='flex-row'>
-        <NavLink to='/' > HOME </NavLink>
-        <NavLink to='/blogs' > MARKETS </NavLink>
-        <NavLink to='/oped' > POSTS </NavLink>
+        <NavLink className='nav-item' to='/' > HOME </NavLink>
+        <NavLink className='nav-item' to='/blogs' > FINANCE </NavLink>
+        <NavLink className='nav-item' to='/oped' > BLOGS </NavLink>
       </nav>
     </div>
   )
