@@ -241,6 +241,7 @@ ul {
 .About form {
   display: flex;
   flex-direction: column;
+  margin-bottom: 3rem;
 }
 
 
@@ -254,3 +255,9 @@ ul {
 /* CSS FOR FOOTER ONLY */
 /*                         */
 /*                         */
+
+
+.Footer {
+  background-color: rgb(214,79,73);
+  height: 10rem;
+}
