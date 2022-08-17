@@ -16,8 +16,8 @@ export const AvalancheData = () => {
     <div>
       { avaxData &&
           <div>
-            <p>24H: {(avaxData.market_data.price_change_percentage_24h).toFixed(2)}</p>
             <p>{(avaxData.symbol).toUpperCase()}: ${avaxData.market_data.current_price.usd}</p>
+            <p>24H: {(avaxData.market_data.price_change_percentage_24h).toFixed(2)}%</p>
           </div>   
       }
     </div>

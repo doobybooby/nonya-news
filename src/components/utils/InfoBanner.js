@@ -2,7 +2,9 @@ import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import DrizzleIcon from '../images/icons/drizzle.png'
+import ClockIcon from '../images/icons/clock.png'
 import { AvalancheData } from './AvalancheData'
+import NonyaNewsLogo from '../../images/nonyaNewsLogo.png'
 
 export const InfoBanner = () => {
   const [ date, setDate ] = useState('')
@@ -73,18 +75,26 @@ export const InfoBanner = () => {
   }
 
   return (
-    <div className='flex-col banner-wrapper'>
-      <div className='flex-row info-banner'>
-        <div>
-          { date.split(' ').map( info => <p>{info}</p>) }
-        </div>
-        <div>
-          <img src={DrizzleIcon} width='30%'/>
-          {/* <p>{ weather.current &&  weather.current.weather[0].main }</p> */}
-          <p>{ weather.current &&  weather.current.temp }°F </p>
-        </div>
-        <AvalancheData/>
+    <div className='flex-infobanner'>
+      <div className='home-logo'>
+        <img src={NonyaNewsLogo} width='80%' />
+        <p>Read About Others</p>
+        {/* <h1>NONYA NEWS</h1>
+        <h2>Where you read other people's business</h2> */}
       </div>
+      <div className='nav-search'>
+        {/* <input type="text" /> */}
+      </div>
+      <div className='nav-time'>
+        <img src={ClockIcon} width='30%'/>
+        { date }
+      </div>
+      <div>
+        <img src={DrizzleIcon} width='30%'/>
+        <p>{ weather.current &&  weather.current.temp }°F </p>
+        {/* <p>{ weather.current &&  weather.current.weather[0].main }</p> */}
+      </div>
+      <AvalancheData/>
     </div>
   )
 }

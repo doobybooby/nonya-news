@@ -23,6 +23,11 @@ a {
   font-weight: 900;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .t2rem {
   font-size: 1.75rem;
 }
@@ -48,16 +53,34 @@ a {
   justify-content: space-around;
 }
 
-.info-banner {
-  padding-top: 1.5rem;
+.flex-infobanner {
   background-color: #5CC8FF;
-  text-transform: full-width;
   font-weight: 600;
-  text-align: center;
+  padding: 1rem 0;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 10rem;
 }
 
+.flex-infobanner > * {
+  flex: 1;
+}
 
+.nav-search {
+  flex:2;
+}
+
+.nav-time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nav-time > img{
+  margin-bottom: 1.5rem;
+}
 
 .nav {
   align-items: center;
