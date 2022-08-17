@@ -179,7 +179,7 @@ export const Home = () => {
             description: singleNews.description,
             url: singleNews.url,
             author: singleNews.author,
-            publisher: ((singleNews.source.name).toLowerCase()).split(' ').join(''),
+            publisher: ((singleNews.source.name).toLowerCase()),
             publishedAt: singleNews.publishedAt,
             category: '',
             logoUrl: findLogo((singleNews.source.name).toLowerCase())
@@ -197,9 +197,12 @@ export const Home = () => {
         {
           newsDatabase.map(news => (
             <li key={news.url} className={`news-card ${news.publisher}`}>
-              {/* <p>{news.publisher}</p> */}
+              <p>{news.publisher}</p>
               <div className='news-header'>
-                <img src={news.logoUrl} alt=""  width='40%' height='20%' className='news-logo'/>
+                {/* <div className="news-publisher">
+                  {news.publisher.split(' ').map(word => <p className={word}>{`${word[0].toUpperCase()}${word.slice(1)}`}</p>)}
+                </div> */}
+                <img src={news.logoUrl} alt=""  width='30%' height='20%' className='news-logo'/>
                 <h1>{ news.title }</h1>
               </div>
               <div className='news-content'>

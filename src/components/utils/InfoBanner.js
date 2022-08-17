@@ -77,7 +77,7 @@ export const InfoBanner = () => {
   return (
     <div className='flex-infobanner'>
       <div className='home-logo'>
-        <img src={NonyaNewsLogo} width='80%' />
+        <img src={NonyaNewsLogo} width='60%' />
         <p>Read About Others</p>
         {/* <h1>NONYA NEWS</h1>
         <h2>Where you read other people's business</h2> */}
