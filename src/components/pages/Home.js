@@ -198,9 +198,11 @@ export const Home = () => {
           newsDatabase.map(news => (
             <li key={news.url} className={`news-card ${news.publisher}`}>
               {/* <p>{news.publisher}</p> */}
-              <img src={news.logoUrl} alt=""  width='100%' height='20%' className='news-logo'/>
+              <div className='news-header'>
+                <img src={news.logoUrl} alt=""  width='40%' height='20%' className='news-logo'/>
+                <h1>{ news.title }</h1>
+              </div>
               <div className='news-content'>
-                <h1 className='t2rem'>{ news.title }</h1>
                 <img src={news.imgLocation} alt="img" width='100%' />
                 <h3 className='abstract'>{ news.description }</h3>
                 <a href={news.url}>...Read more</a>

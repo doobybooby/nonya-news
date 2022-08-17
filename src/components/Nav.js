@@ -9,7 +9,7 @@ function Nav() {
       <nav className='flex-row'>
         <NavLink className='nav-item' to='/' > HOME </NavLink>
         <NavLink className='nav-item' to='/blogs' > BLOGS </NavLink>
-        <NavLink className='nav-item' to='/oped' > ABOUT  </NavLink>
+        <NavLink className='nav-item' to='/about' > ABOUT  </NavLink>
       </nav>
     </div>
   )

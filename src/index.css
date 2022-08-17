@@ -54,22 +54,20 @@ a {
 }
 
 .flex-infobanner {
-  background-color: #5CC8FF;
-  font-weight: 600;
+  /* background-color: #81EDFF; */
+  background-color: rgb(214,79,73);
+  font-weight: 900;
   padding: 1rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   height: 10rem;
+  color: white;
 }
 
 .flex-infobanner > * {
   flex: 1;
-}
-
-.nav-search {
-  flex:2;
 }
 
 .nav-time {
@@ -78,6 +76,7 @@ a {
   justify-content: center;
   align-items: center;
 }
+
 .nav-time > img{
   margin-bottom: 1.5rem;
 }
@@ -86,6 +85,7 @@ a {
   align-items: center;
   font-family: 'Shadows Into Light', cursive;
   justify-content: space-around;
+  background-color: black;
 }
 
 .nav h1 {
@@ -105,14 +105,32 @@ nav {
 }
 
 .active {
-  background-color: black;
+  background-color: rgb(214,79,73);
   font-size: 2.5rem;
+  color: white;
+}
+.nav-item {
   color: white;
 }
 
 ul {
   padding: 0;
   margin: 0;
+}
+
+.news-header {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  margin-top: 2rem;
+}
+.news-header h1{
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  padding-left: 2rem ;
+  font-size: 1.75rem;
 }
 
 .news-list {
@@ -182,3 +200,57 @@ ul {
 }
 
 
+/*                         */
+/*                         */
+/* CSS FOR ABOUT PAGE ONLY */
+/*                         */
+/*                         */
+
+
+.About {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.About a {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.About ul {
+  list-style: none;
+}
+
+.About ul li {
+  padding: 0 1rem;
+}
+
+.profile-card {
+  text-align: center;
+  background-color: rgb(214,79,73);
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.profile-card div {
+  background-color: rgb(255, 255, 255, .5);
+}
+
+.About form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+/*                         */
+/*                         */
+/* CSS FOR FOOTER ONLY */
+/*                         */
+/*                         */
