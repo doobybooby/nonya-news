@@ -121,16 +121,15 @@ nav {
 }
 
 .nav-item {
-  background-color: #CED2DC;
   text-shadow: 1px 1px black;
   color: #2A2522;
   width: 100%;
   height: 100%;
   text-align: center;
+  background-color: #F2F5FA;
 }
 
 .active {
-  background-color: #CED2DC;
   font-size: 2rem;
 }
 
@@ -160,7 +159,7 @@ ul {
 }
 
 .news-card {
-  /* background-color: rgb(194, 220, 195); */
+  background-color: #2A2522;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -169,7 +168,6 @@ ul {
 }
 
 .nyTimes {
-  /* background-color: #E8EBF5; */
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -182,8 +180,8 @@ ul {
   background-color: rgb(198, 23, 7)
 }
 
-[class*='washington'] {
-  background-color: white;
+[class*='cbs'] {
+  background-color: rgb(34,67,197);
 }
 
 .cnbc {
@@ -194,11 +192,15 @@ ul {
   background-color: black;
 }
 
+[class*='bbc'] {
+  background-color: black;
+}
+
 .motor1 {
   background-color: black;
 }
 
-.wccftech {
+.tmz, .youtube, .wccftech  {
   background-color: black;
 }
 
@@ -212,6 +214,11 @@ ul {
 
 .newyorkpost {
   background-color: rgb(188, 64, 58);
+}
+
+.politico {
+  background-color: rgb(178, 46, 39);
+  
 }
 
 .news-content {
@@ -269,7 +276,7 @@ ul {
 .aboutInfo-container > form {
   padding: 1rem;
   background-color: #2A2522;
-  color: #2A2522;
+  color: #F2F5FA;
 }
 .aboutInfo-container > form button {
   margin: 1rem 0;
@@ -337,6 +344,10 @@ ul {
   height: 10rem;
 }
 
+.bck-white {
+  padding: 1rem;
+  background-color: white;
+}
 
 
 

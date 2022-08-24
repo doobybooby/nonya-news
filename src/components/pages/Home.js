@@ -19,6 +19,10 @@ import NflLogo from '../../images/nflLogo.png'
 import wccfTech from '../../images/wccftech.png'
 import GoogleNewsLogo from '../../images/googleNewsLogo.png'
 import NonyaNewsLogo from '../../images/nonyaNewsLogo.png'
+import BBCLogo from '../../images/BBCLogo.png'
+import ReuterLogo from '../../images/reuterLogo.png'
+import PoliticoLogo from '../../images/politicoLogo.png'
+import TmzLogo from '../../images/tmzLogo.png'
 import { Banner } from '../utils/Banner'
 // collapsed news 
 // {
@@ -170,6 +174,10 @@ export const Home = () => {
             else if ( publisher === 'nfl news' ) return NflLogo
             else if ( publisher === 'wccftech' ) return wccfTech
             else if ( publisher === 'google news' ) return GoogleNewsLogo
+            else if ( publisher === 'bbc news' ) return BBCLogo
+            else if ( publisher === 'reuters' ) return ReuterLogo
+            else if ( publisher === 'politico' ) return PoliticoLogo
+            else if ( publisher === 'tmz' ) return TmzLogo
             else return NonyaNewsLogo
             
           }
@@ -200,14 +208,11 @@ export const Home = () => {
           newsDatabase.map(news => (
             <li key={news.url} className={`news-card ${news.publisher}`}>
               <p>{news.publisher}</p>
+              <div className='news-content'>
               <div className='news-header'>
-                {/* <div className="news-publisher">
-                  {news.publisher.split(' ').map(word => <p className={word}>{`${word[0].toUpperCase()}${word.slice(1)}`}</p>)}
-                </div> */}
                 <img src={news.logoUrl} alt=""  width='30%' className='news-logo'/>
                 <h1>{ news.title }</h1>
               </div>
-              <div className='news-content'>
                 <img src={news.imgLocation} alt="img" width='100%' />
                 <h3 className='abstract'>{ news.description }</h3>
                 <a href={news.url}>...Read more</a>

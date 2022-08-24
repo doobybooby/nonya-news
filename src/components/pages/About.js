@@ -3,8 +3,8 @@ import React from 'react'
 function About() {
   return (
     <div className='About'>
-      <h1>ABOUT US</h1>
       <img src="" alt="carousel" />
+      <h1>ABOUT US</h1>
       <div className='aboutInfo-container'>
         <h2>MISSION</h2>
         <p>
@@ -49,7 +49,7 @@ function About() {
       <h2>TEAM</h2>
 
       <div id='team' className="aboutInfo-container">
-        <h3>Hanbin Lee</h3>
+        <h2>Hanbin Lee</h2>
         <div className='profile-card'>
           <img src="https://source.unsplash.com/random/300x200" alt="profile_pic" width='50%'/>
           <div>
@@ -80,7 +80,7 @@ function About() {
       </div>
 
       <div id='team' className="aboutInfo-container">
-        <h3>Doobin Lee</h3>
+        <h2>Doobin Lee</h2>
         <div className='profile-card'>
         <img src="https://source.unsplash.com/random/300x200" alt="profile_pic" width='50%'/>
           <div>
