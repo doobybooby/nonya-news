@@ -204,7 +204,7 @@ export const Home = () => {
                 {/* <div className="news-publisher">
                   {news.publisher.split(' ').map(word => <p className={word}>{`${word[0].toUpperCase()}${word.slice(1)}`}</p>)}
                 </div> */}
-                <img src={news.logoUrl} alt=""  width='30%' height='20%' className='news-logo'/>
+                <img src={news.logoUrl} alt=""  width='30%' className='news-logo'/>
                 <h1>{ news.title }</h1>
               </div>
               <div className='news-content'>
