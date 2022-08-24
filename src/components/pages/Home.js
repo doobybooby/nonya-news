@@ -19,6 +19,11 @@ import NflLogo from '../../images/nflLogo.png'
 import wccfTech from '../../images/wccftech.png'
 import GoogleNewsLogo from '../../images/googleNewsLogo.png'
 import NonyaNewsLogo from '../../images/nonyaNewsLogo.png'
+import BBCLogo from '../../images/BBCLogo.png'
+import ReuterLogo from '../../images/reuterLogo.png'
+import PoliticoLogo from '../../images/politicoLogo.png'
+import TmzLogo from '../../images/tmzLogo.png'
+import { Banner } from '../utils/Banner'
 // collapsed news 
 // {
 //   title:''
@@ -169,6 +174,10 @@ export const Home = () => {
             else if ( publisher === 'nfl news' ) return NflLogo
             else if ( publisher === 'wccftech' ) return wccfTech
             else if ( publisher === 'google news' ) return GoogleNewsLogo
+            else if ( publisher === 'bbc news' ) return BBCLogo
+            else if ( publisher === 'reuters' ) return ReuterLogo
+            else if ( publisher === 'politico' ) return PoliticoLogo
+            else if ( publisher === 'tmz' ) return TmzLogo
             else return NonyaNewsLogo
             
           }
@@ -179,7 +188,7 @@ export const Home = () => {
             description: singleNews.description,
             url: singleNews.url,
             author: singleNews.author,
-            publisher: ((singleNews.source.name).toLowerCase()).split(' ').join(''),
+            publisher: ((singleNews.source.name).toLowerCase()),
             publishedAt: singleNews.publishedAt,
             category: '',
             logoUrl: findLogo((singleNews.source.name).toLowerCase())
@@ -193,16 +202,17 @@ export const Home = () => {
 
   return (
     <div>
+      <Banner />
       <ul className='news-list flex-col'>
         {
           newsDatabase.map(news => (
             <li key={news.url} className={`news-card ${news.publisher}`}>
-              {/* <p>{news.publisher}</p> */}
+              <p>{news.publisher}</p>
+              <div className='news-content'>
               <div className='news-header'>
-                <img src={news.logoUrl} alt=""  width='40%' height='20%' className='news-logo'/>
+                <img src={news.logoUrl} alt=""  width='30%' className='news-logo'/>
                 <h1>{ news.title }</h1>
               </div>
-              <div className='news-content'>
                 <img src={news.imgLocation} alt="img" width='100%' />
                 <h3 className='abstract'>{ news.description }</h3>
                 <a href={news.url}>...Read more</a>
