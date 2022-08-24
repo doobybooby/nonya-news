@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 import DrizzleIcon from '../images/icons/drizzle.png'
 import ClockIcon from '../images/icons/clock.png'
 import { AvalancheData } from './AvalancheData'
-import NonyaNewsLogo from '../../images/nonyaNewsLogo.png'
 
 export const InfoBanner = () => {
   const [ date, setDate ] = useState('')
@@ -27,10 +26,8 @@ export const InfoBanner = () => {
     const interval = setInterval(()=> {
       setDate(fetchDate())
     }, 1000)
-
     return ()=> clearInterval(interval)
   }, [date])
-
 
   useEffect(()=> {
     const setCoordinates = async()=> {
@@ -46,7 +43,6 @@ export const InfoBanner = () => {
     setWeather()
   }, [weatherCoordinates])
 
-    
   const fetchWeatherCoordinates = async()=> {
     const response = await axios.get(
       'http://api.openweathermap.org/geo/1.0/direct', { 
@@ -76,15 +72,6 @@ export const InfoBanner = () => {
 
   return (
     <div className='flex-infobanner'>
-      <div className='home-logo'>
-        <img src={NonyaNewsLogo} width='60%' />
-        <p>Read About Others</p>
-        {/* <h1>NONYA NEWS</h1>
-        <h2>Where you read other people's business</h2> */}
-      </div>
-      <div className='nav-search'>
-        {/* <input type="text" /> */}
-      </div>
       <div className='nav-time'>
         <img src={ClockIcon} width='30%'/>
         { date }

@@ -19,6 +19,7 @@ import NflLogo from '../../images/nflLogo.png'
 import wccfTech from '../../images/wccftech.png'
 import GoogleNewsLogo from '../../images/googleNewsLogo.png'
 import NonyaNewsLogo from '../../images/nonyaNewsLogo.png'
+import { Banner } from '../utils/Banner'
 // collapsed news 
 // {
 //   title:''
@@ -193,6 +194,7 @@ export const Home = () => {
 
   return (
     <div>
+      <Banner />
       <ul className='news-list flex-col'>
         {
           newsDatabase.map(news => (
