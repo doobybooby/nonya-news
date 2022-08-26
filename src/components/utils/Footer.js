@@ -1,43 +1,21 @@
 import React from 'react'
-import NYTLogo from '../../images/NewYorkTimes.svg.png'
-import GuardianLogo from '../../images/TheGuardianLogo.jpeg'
-import CnnLogo from '../../images/cnnLogo.png'
-import YoutubeLogo from '../../images/youtubeLogo.png'
-import WashingtonsPostLogo from '../../images/washingtonsPostLogo.png'
-import CnbcLogo from '../../images/cnbcLogo.png'
-import UsaTodayLogo from '../../images/usaTodayLogo.png'
-import BuzzfeedLogo from '../../images/buzzfeedLogo.jpeg'
-import NbcSportsLogo from '../../images/nbcSportsLogo.png'
-import Motor1Logo from '../../images/motor1Logo.png'
-import AbcLogo from '../../images/abcLogo.png'
-import FoxLogo from '../../images/foxLogo.jpeg'
-import BBCLogo from '../../images/BBCLogo.png'
-import ReuterLogo from '../../images/reuterLogo.png'
-import PoliticoLogo from '../../images/politicoLogo.png'
-import TmzLogo from '../../images/tmzLogo.png'
+import TikTokIcon from '../../images/tiktok-icon.svg'
+import GithubIcon from '../../images/github-icon.svg'
+import IgIcon from '../../images/ig-instagram-icon.svg'
+import GmailIcon from '../../images/Gmail_icon.svg'
+import DiscordIcon from '../../images/discord-icon.svg'
 
-function Footer() {
+export const Footer = () => {
   return (
-    <div className='Footer'>
-      FOOTER
-      <div className='bck-white'>
-        <img src={NYTLogo} alt="" width='15%' />
-        <img src={GuardianLogo} alt="" width='15%' />
-        <img src={CnnLogo} alt="" width='15%' />
-        <img src={YoutubeLogo} alt="" width='15%' />
-        <img src={WashingtonsPostLogo} alt="" width='15%' />
-        <img src={CnbcLogo} alt="" width='15%' />
-        <img src={UsaTodayLogo} alt="" width='15%' />
-        <img src={AbcLogo} alt="" width='15%' />
-        <img src={FoxLogo} alt="" width='15%' />
-        <img src={BuzzfeedLogo} alt="" width='15%' />
-        <img src={BBCLogo} alt="" width='15%' />
-        <img src={ReuterLogo} alt="" width='15%' />
-        <img src={PoliticoLogo} alt="" width='15%' />
-        <img src={TmzLogo} alt="" width='15%' />
+    <div className='component-footer'>
+      <div className='footer-logos-container'>
+        <img src={GithubIcon} alt="Github" width='7%' />
+        <img src={IgIcon} alt="Email" width='7%' />
+        <img src={TikTokIcon} alt="TikTok" width='7%'/>
+        <img src={DiscordIcon} alt="Email" width='7%' />
+        <img src={GmailIcon} alt="Email" width='7%' />
       </div>
+      <p className='copyright'> Copyright © 2022 Nonya Toonz Record LLC </p>
     </div>
   )
 }
-
-export default Footer

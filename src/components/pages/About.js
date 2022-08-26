@@ -1,4 +1,5 @@
 import React from 'react'
+import LogoContainer from '../utils/LogoContainer'
 
 function About() {
   return (
@@ -121,6 +122,8 @@ function About() {
         </form>
       </div>
 
+      <h2>News Sources</h2>
+      <LogoContainer/>
     </div>
   )
 }

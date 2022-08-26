@@ -59,22 +59,22 @@ a {
   font-weight: 900;
   padding: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
-  color: white;
+  width: 100%;
 }
 
 .banner {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  background-color: #2A2522;
+  background-color: #CED2DC;
   height: 70vh;
   margin: 0;
   padding: 0;
-  color: #F2F5FA;
+  color: #2A2522;
 }
 
 .banner h1 {
@@ -91,6 +91,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 3rem;
 }
 
 .nav-time > img{
@@ -243,7 +244,7 @@ ul {
   background-color: #CED2DC;
 }
 
-.About > .aboutInfo-container {
+.aboutInfo-container {
   position: relative;
   border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
   box-shadow: 20px 20px rgba(0,0,0,.15);
@@ -254,7 +255,7 @@ ul {
   background-color: white;
 }
 
-.About > .aboutInfo-container:hover {
+.aboutInfo-container:hover {
   border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
   box-shadow: 10px 10px rgba(0,0,0,.25);
 }
@@ -326,7 +327,11 @@ ul {
   margin-bottom: 3rem;
 }
 
-
+/*                         */
+/*   END END END END END   */               
+/* CSS FOR ABOUT PAGE ONLY */
+/*                         */
+/*                         */
 
 
 
@@ -334,23 +339,108 @@ ul {
 
 /*                         */
 /*                         */
-/* CSS FOR FOOTER ONLY */
+/* CSS FOR BLOG PAGE ONLY  */
 /*                         */
 /*                         */
 
-
-.Footer {
+.blogs-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #2A2522;
-  height: 10rem;
+  color: #F2F5FA;
 }
 
-.bck-white {
+.blogs-wrapper {
+  border-bottom: black 1.5px solid;
+}
+
+.blogs-post {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #CED2DC; */
+  color: #CED2DC;
+}
+
+.blogs-post-header {
+  display: flex;
+  padding: 0 1rem;
+}
+
+.blogs-post-header > div {
+  display: flex;
+  background-color:#F2F5FA;
+  align-items: center;
+}
+
+
+.blogs-post-header > h2{
+  font-size: 2.5rem;
+  padding: 0 1rem;
+}
+
+.blog-discription {
+  background-color: #2A2522;
+  padding: .5rem 1rem;
+}
+
+.blog-stats {
+  display: flex;
+  justify-content: space-around;
+  background-color: #F2F5FA;
+  color: #2A2522;
+}
+
+
+/*                         */
+/*   END END END END END   */               
+/* CSS FOR BLOG PAGE ONLY  */
+/*                         */
+/*                         */
+
+
+
+.logos-container {
+  width: 50%;
+}
+
+
+
+#logos-container {
+  margin-bottom: 4rem;
+}
+
+/*        */
+/*        */
+/* FOOTER */
+/*        */  
+/*        */
+
+.component-footer {
+  background-color: #2A2522;
+  color: #F2F5FA;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.copyright {
+  margin: 0;
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+}
+
+.footer-logos-container {
+  background-color: #C30011;
+  display: flex;
+  justify-content: space-around;
   padding: 1rem;
-  background-color: white;
 }
 
-
-
+#contact-us{
+  font-size: 1.5rem;
+}
 
 
 

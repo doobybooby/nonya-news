@@ -24,17 +24,6 @@ import ReuterLogo from '../../images/reuterLogo.png'
 import PoliticoLogo from '../../images/politicoLogo.png'
 import TmzLogo from '../../images/tmzLogo.png'
 import { Banner } from '../utils/Banner'
-// collapsed news 
-// {
-//   title:''
-//   imgLocation:''
-//   description: ''
-//   url: ''
-//   author: ''
-//   publihser: ''
-//   publishedAt: ''
-//   category: ['','']
-// }
 
 
 export const Home = () => {

@@ -73,15 +73,11 @@ export const InfoBanner = () => {
   return (
     <div className='flex-infobanner'>
       <div className='nav-time'>
-        <img src={ClockIcon} width='30%'/>
-        { date }
+        <img src={DrizzleIcon} width='10%'/>
+        { date.split(' ').map( i => <div>{i}</div>) }
+        <div>{ weather.current &&  weather.current.temp }°F </div>
       </div>
-      <div>
-        <img src={DrizzleIcon} width='30%'/>
-        <p>{ weather.current &&  weather.current.temp }°F </p>
-        {/* <p>{ weather.current &&  weather.current.weather[0].main }</p> */}
-      </div>
-      <AvalancheData className='nav-avax'/>
+      {/* <AvalancheData className='nav-avax'/> */}
     </div>
   )
 }
