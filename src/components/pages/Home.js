@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import NYTLogo from '../../images/NewYorkTimes.svg.png'
 import GuardianLogo from '../../images/TheGuardianLogo.jpeg'
 import CnnLogo from '../../images/cnnLogo.png'
@@ -25,6 +25,8 @@ import PoliticoLogo from '../../images/politicoLogo.png'
 import TmzLogo from '../../images/tmzLogo.png'
 import { Banner } from '../utils/Banner'
 import LogoContainer from '../utils/LogoContainer'
+import { InfoBanner } from '../utils/InfoBanner'
+import { VideoPlayer } from '../utils/VideoPlayer'
 
 export const Home = () => {
   const [newsDatabase, setNewsDatabase ] = useState([])
@@ -170,7 +172,7 @@ export const Home = () => {
             else return NonyaNewsLogo
             
           }
-          console.log(singleNews)
+          // console.log(singleNews)
           const inLine = {
             title: singleNews.title,
             imgLocation: singleNews.urlToImage,
@@ -189,10 +191,37 @@ export const Home = () => {
     }
   }
 
+  const ref = useRef(null)
+
+  const handleClick = () => {
+    ref.current?.scrollIntoView({behavior: 'smooth'})
+  }
+
   return (
     <div>
-      <Banner />
-      <ul className='news-list flex-col'>
+            <VideoPlayer />
+
+      {/* <button onClick={handleClick}>X</button> */}
+      {/* <Banner props={ref} handleClick/> */}
+      <div className='banner'>
+        <InfoBanner/>
+        <div className='banner-hero-text'>
+          {/* <h1>5-Min Scroll</h1> */}
+          <button 
+            className='banner-hero-button'
+            onClick={handleClick}
+          >
+            <div>| Read Reliable News |</div>
+          </button>
+          <div onClick={handleClick} className="arrow">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          {/* <p>| Read Reliable News |</p> */}
+        </div>
+      </div>
+      <ul ref={ref} id='first-news' className='news-list flex-col'>
         {
           newsDatabase.map(news => (
             <li key={news.url} className={`news-card ${news.publisher}`}>

@@ -75,11 +75,11 @@ export const InfoBanner = () => {
           <h3> {date.hour}:{date.min} </h3>
         </div>
         <div>
+          <h3>New York</h3>
           <div className='nav-time-date nav-weather'>
             <img src={SunIcon} width='40%'/>
             <h3>{ weather.current &&  weather.current.temp }°F </h3>
           </div>
-          <h3>New York</h3>
         </div>
       </div>
     </div>

@@ -5,8 +5,8 @@ import LogoContainer from '../utils/LogoContainer'
 function About() {
   return (
     <div className='About'>
-      <Carrasoul/>
       <h1>ABOUT US</h1>
+      <Carrasoul/>
       <div className='aboutInfo-container'>
         <h2>MISSION</h2>
         <p>

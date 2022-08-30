@@ -124,20 +124,25 @@ a {
 }
 
 .nav-weather {
-  background-color: #CED2DC;
   display: flex;
   align-items: center;
   padding: 0 1.5rem;
   padding-bottom: 2rem;
   border-radius: 25px;
-  color: #2A2522;
-  /* border: #C30011 1px solid ; */
+  color: #F2F5FA;
+  border: #C30011 1px solid ;
+
 }
 
 .nav-weather > img {
   padding: 1.5rem 0;
 }
 
+.banner-hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .banner-hero-button {
   background-color: #C30011;
@@ -147,6 +152,49 @@ a {
   font-size: 1.5rem;
   color: #CED2DC;
   font-weight: 900;
+  cursor: pointer;
+  z-index: 5;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.arrow {
+  cursor: pointer;
+
+}
+
+.arrow > div {
+  padding: .1rem;
+  width: 30px;
+  height: 30px;
+  border-bottom: 5px solid #C30011;
+  border-right: 5px solid #C30011;
+  transform: rotate(45deg);
+  animation: scroll 2s infinite;
+}
+
+.arrow > div:nth-child(2){
+  animation-delay: -.2s;
+}
+.arrow > div:nth-child(3){
+  animation-delay: -.2s;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px); 
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px); 
+
+  }
 }
 
 .nav {
@@ -168,23 +216,18 @@ nav {
   align-items: center;
 }
 
-.nav-item:hover {
-  font-size: 2rem;
-    border-radius: 25px;
-
-}
 
 .nav-item {
   text-shadow: 1px 1px black;
-  color: #2A2522;
   width: 100%;
   height: 100%;
   text-align: center;
-  background-color: #F2F5FA;
+  border: 1px solid #CED2DC;
+  color: #F2F5FA;
 }
 
 .active {
-  font-size: 3rem;
+  font-size: 2rem;
   border-radius: 25px;
 }
 
@@ -292,6 +335,9 @@ ul {
 
 .carrasoul {
   display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel_slide {
@@ -348,7 +394,6 @@ ul {
   color: #F2F5FA;
   font-size: 1rem;
   text-transform: uppercase;
-  cursor: pointer;
 }
 
 
@@ -415,6 +460,7 @@ ul {
 
 .blogs-wrapper {
   border-bottom: black 1.5px solid;
+  padding-top: 1rem;
 }
 
 .blogs-post {
@@ -441,6 +487,11 @@ ul {
   padding: 0 1rem;
 }
 
+.blog-description-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
 .blog-discription {
   background-color: #2A2522;
   padding: .5rem 1rem;
@@ -448,9 +499,17 @@ ul {
 
 .blog-stats {
   display: flex;
-  justify-content: space-around;
   background-color: #F2F5FA;
+  opacity: .5;
   color: #2A2522;
+  justify-content: space-around;
+}
+
+.blog-likes {
+  display: flex;
+}
+.blog-comments {
+  display: flex;
 }
 
 
@@ -527,4 +586,12 @@ ul {
   .profile-card img {
     width: 80%;
   }
+}
+
+
+
+.react-video-player {
+  background-color: #2A2522;
+  opacity: .2;
+  position: absolute;
 }
