@@ -18,7 +18,7 @@ import TmzLogo from '../../images/tmzLogo.png'
 
 function LogoContainer() {
   return (
-    <div id='logos-container' className='aboutInfo-container'>
+    <div id='logos-container'>
       <img src={NYTLogo} alt="" width='15%' />
       <img src={GuardianLogo} alt="" width='15%' />
       <img src={CnnLogo} alt="" width='15%' />

@@ -1,9 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import DrizzleIcon from '../images/icons/drizzle.png'
-import ClockIcon from '../images/icons/clock.png'
-import { AvalancheData } from './AvalancheData'
+import SunIcon from '../images/icons/icons8-sun.svg'
 
 export const InfoBanner = () => {
   const [ date, setDate ] = useState('')
@@ -12,14 +10,14 @@ export const InfoBanner = () => {
   
   const fetchDate = ()=> {
     const date = new Date()
-    console.log(  )
     const displayDate = {
-      month: date.getMonth()+1,
+      month: date.toLocaleString('default', {month: 'long'}),
       date: date.getDate(),
       hour: date.getHours(),
       min: date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()
     }
-    return `${displayDate.month}/${displayDate.date} ${displayDate.hour}:${displayDate.min}`
+    return displayDate
+    // return `${displayDate.month}/${displayDate.date} ${displayDate.hour}:${displayDate.min}`
   }
 
   useEffect(()=> {
@@ -66,18 +64,24 @@ export const InfoBanner = () => {
         }
       }
     )
-    console.log(weather)
     setWeather(response.data)
   }
 
   return (
     <div className='flex-infobanner'>
       <div className='nav-time'>
-        <img src={DrizzleIcon} width='10%'/>
-        { date.split(' ').map( i => <div>{i}</div>) }
-        <div>{ weather.current &&  weather.current.temp }°F </div>
+        <div className='nav-time-date'>
+          <h3>{ date.month } { date.date }</h3>
+          <h3> {date.hour}:{date.min} </h3>
+        </div>
+        <div>
+          <div className='nav-time-date nav-weather'>
+            <img src={SunIcon} width='40%'/>
+            <h3>{ weather.current &&  weather.current.temp }°F </h3>
+          </div>
+          <h3>New York</h3>
+        </div>
       </div>
-      {/* <AvalancheData className='nav-avax'/> */}
     </div>
   )
 }

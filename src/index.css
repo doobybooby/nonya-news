@@ -68,13 +68,14 @@ a {
 .banner {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-  background-color: #CED2DC;
-  height: 70vh;
+  background-color: #2A2522;
+  height: 75vh;
   margin: 0;
   padding: 0;
-  color: #2A2522;
+  color: #CED2DC;
+  text-align: center;
 }
 
 .banner h1 {
@@ -82,20 +83,70 @@ a {
   padding: 0;
 }
 
+
 .flex-infobanner > * {
   flex: 1;
 }
 
 .nav-time {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
+  justify-content: space-between;
+  padding: 1.5rem;
+  font-size: 2rem;
 }
 
-.nav-time > img{
-  margin-bottom: 1.5rem;
+.nav-time > *{
+  margin: 0;
+  padding: 0;
+}
+
+.nav-time-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.flex-infobanner  h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.nav-time-weather {
+  background-color: #F2F5FA;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-time-weather > * {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-weather {
+  background-color: #CED2DC;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  padding-bottom: 2rem;
+  border-radius: 25px;
+  color: #2A2522;
+  /* border: #C30011 1px solid ; */
+}
+
+.nav-weather > img {
+  padding: 1.5rem 0;
+}
+
+
+.banner-hero-button {
+  background-color: #C30011;
+  border: none;
+  padding: 1rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  color: #CED2DC;
+  font-weight: 900;
 }
 
 .nav {
@@ -119,6 +170,8 @@ nav {
 
 .nav-item:hover {
   font-size: 2rem;
+    border-radius: 25px;
+
 }
 
 .nav-item {
@@ -131,7 +184,8 @@ nav {
 }
 
 .active {
-  font-size: 2rem;
+  font-size: 3rem;
+  border-radius: 25px;
 }
 
 
@@ -157,15 +211,17 @@ ul {
 .news-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .news-card {
-  background-color: #2A2522;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 1rem 2.5rem;
+  padding: 0rem 2.5rem;
   border-bottom: 1px solid #2A2522;
+  margin: 0;
+  background-color: #2A2522;
 }
 
 .nyTimes {
@@ -224,8 +280,7 @@ ul {
 
 .news-content {
   background-color: white;
-  margin: 2rem 0;
-  padding: 1rem;
+  padding: .5rem 1rem;
 }
 
 
@@ -235,12 +290,20 @@ ul {
 /*                         */
 /*                         */
 
+.carrasoul {
+  display: flex;
+}
+
+.carousel_slide {
+  position: absolute;
+  width: 100%;
+}
 
 .About {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 2rem;
+  padding: 3rem;
   background-color: #CED2DC;
 }
 
@@ -280,13 +343,12 @@ ul {
   color: #F2F5FA;
 }
 .aboutInfo-container > form button {
-  margin: 1rem 0;
-  padding: 1rem 0;
   border: none;
   background-color: #C30011;
   color: #F2F5FA;
   font-size: 1rem;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 
@@ -432,10 +494,10 @@ ul {
 }
 
 .footer-logos-container {
-  background-color: #C30011;
   display: flex;
   justify-content: space-around;
   padding: 1rem;
+  width: 50%;
 }
 
 #contact-us{

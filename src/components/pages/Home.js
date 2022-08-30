@@ -24,7 +24,7 @@ import ReuterLogo from '../../images/reuterLogo.png'
 import PoliticoLogo from '../../images/politicoLogo.png'
 import TmzLogo from '../../images/tmzLogo.png'
 import { Banner } from '../utils/Banner'
-
+import LogoContainer from '../utils/LogoContainer'
 
 export const Home = () => {
   const [newsDatabase, setNewsDatabase ] = useState([])
@@ -170,7 +170,7 @@ export const Home = () => {
             else return NonyaNewsLogo
             
           }
-          
+          console.log(singleNews)
           const inLine = {
             title: singleNews.title,
             imgLocation: singleNews.urlToImage,
@@ -196,7 +196,7 @@ export const Home = () => {
         {
           newsDatabase.map(news => (
             <li key={news.url} className={`news-card ${news.publisher}`}>
-              <p>{news.publisher}</p>
+              {/* <p>{news.publisher}</p> */}
               <div className='news-content'>
               <div className='news-header'>
                 <img src={news.logoUrl} alt=""  width='30%' className='news-logo'/>

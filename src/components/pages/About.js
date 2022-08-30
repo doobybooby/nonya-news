@@ -1,10 +1,11 @@
 import React from 'react'
+import { Carrasoul } from '../utils/Carrasoul'
 import LogoContainer from '../utils/LogoContainer'
 
 function About() {
   return (
     <div className='About'>
-      <img src="" alt="carousel" />
+      <Carrasoul/>
       <h1>ABOUT US</h1>
       <div className='aboutInfo-container'>
         <h2>MISSION</h2>
@@ -123,7 +124,9 @@ function About() {
       </div>
 
       <h2>News Sources</h2>
-      <LogoContainer/>
+      <div className='aboutInfo-container'>
+        <LogoContainer/>
+      </div>
     </div>
   )
 }
