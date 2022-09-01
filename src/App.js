@@ -1,10 +1,10 @@
-import './App.css';
 import Nav from './components/Nav';
 import { Routes, Route } from 'react-router-dom'
 import { Home } from './components/pages/Home';
 import { Blogs } from './components/pages/Blogs';
 import About from './components/pages/About';
-import Footer from './components/utils/Footer';
+import { Footer } from './components/utils/Footer';
+import { VideoPlayer } from './components/utils/VideoPlayer';
 
 function App() {
   return (

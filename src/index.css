@@ -59,22 +59,23 @@ a {
   font-weight: 900;
   padding: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
-  color: white;
+  width: 100%;
 }
 
 .banner {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background-color: #2A2522;
-  height: 70vh;
+  height: 75vh;
   margin: 0;
   padding: 0;
-  color: #F2F5FA;
+  color: #CED2DC;
+  text-align: center;
 }
 
 .banner h1 {
@@ -82,19 +83,118 @@ a {
   padding: 0;
 }
 
+
 .flex-infobanner > * {
   flex: 1;
 }
 
 .nav-time {
   display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  font-size: 2rem;
+}
+
+.nav-time > *{
+  margin: 0;
+  padding: 0;
+}
+
+.nav-time-date {
+  display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.flex-infobanner  h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.nav-time-weather {
+  background-color: #F2F5FA;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-time-weather > * {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-weather {
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  padding-bottom: 2rem;
+  border-radius: 25px;
+  color: #F2F5FA;
+  border: #C30011 1px solid ;
+
+}
+
+.nav-weather > img {
+  padding: 1.5rem 0;
+}
+
+.banner-hero-text {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.nav-time > img{
-  margin-bottom: 1.5rem;
+.banner-hero-button {
+  background-color: #C30011;
+  border: none;
+  padding: 1rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  color: #CED2DC;
+  font-weight: 900;
+  cursor: pointer;
+  z-index: 5;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.arrow {
+  cursor: pointer;
+
+}
+
+.arrow > div {
+  padding: .1rem;
+  width: 30px;
+  height: 30px;
+  border-bottom: 5px solid #C30011;
+  border-right: 5px solid #C30011;
+  transform: rotate(45deg);
+  animation: scroll 2s infinite;
+}
+
+.arrow > div:nth-child(2){
+  animation-delay: -.2s;
+}
+.arrow > div:nth-child(3){
+  animation-delay: -.2s;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px); 
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px); 
+
+  }
 }
 
 .nav {
@@ -116,21 +216,19 @@ nav {
   align-items: center;
 }
 
-.nav-item:hover {
-  font-size: 2rem;
-}
 
 .nav-item {
   text-shadow: 1px 1px black;
-  color: #2A2522;
   width: 100%;
   height: 100%;
   text-align: center;
-  background-color: #F2F5FA;
+  border: 1px solid #CED2DC;
+  color: #F2F5FA;
 }
 
 .active {
   font-size: 2rem;
+  border-radius: 25px;
 }
 
 
@@ -156,15 +254,17 @@ ul {
 .news-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .news-card {
-  background-color: #2A2522;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 1rem 2.5rem;
+  padding: 0rem 2.5rem;
   border-bottom: 1px solid #2A2522;
+  margin: 0;
+  background-color: #2A2522;
 }
 
 .nyTimes {
@@ -223,8 +323,7 @@ ul {
 
 .news-content {
   background-color: white;
-  margin: 2rem 0;
-  padding: 1rem;
+  padding: .5rem 1rem;
 }
 
 
@@ -234,16 +333,27 @@ ul {
 /*                         */
 /*                         */
 
+.carrasoul {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel_slide {
+  position: absolute;
+  width: 100%;
+}
 
 .About {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 2rem;
+  padding: 3rem;
   background-color: #CED2DC;
 }
 
-.About > .aboutInfo-container {
+.aboutInfo-container {
   position: relative;
   border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
   box-shadow: 20px 20px rgba(0,0,0,.15);
@@ -254,7 +364,7 @@ ul {
   background-color: white;
 }
 
-.About > .aboutInfo-container:hover {
+.aboutInfo-container:hover {
   border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
   box-shadow: 10px 10px rgba(0,0,0,.25);
 }
@@ -279,8 +389,6 @@ ul {
   color: #F2F5FA;
 }
 .aboutInfo-container > form button {
-  margin: 1rem 0;
-  padding: 1rem 0;
   border: none;
   background-color: #C30011;
   color: #F2F5FA;
@@ -326,7 +434,11 @@ ul {
   margin-bottom: 3rem;
 }
 
-
+/*                         */
+/*   END END END END END   */               
+/* CSS FOR ABOUT PAGE ONLY */
+/*                         */
+/*                         */
 
 
 
@@ -334,23 +446,122 @@ ul {
 
 /*                         */
 /*                         */
-/* CSS FOR FOOTER ONLY */
+/* CSS FOR BLOG PAGE ONLY  */
 /*                         */
 /*                         */
 
-
-.Footer {
+.blogs-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #2A2522;
-  height: 10rem;
+  color: #F2F5FA;
 }
 
-.bck-white {
+.blogs-wrapper {
+  border-bottom: black 1.5px solid;
+  padding-top: 1rem;
+}
+
+.blogs-post {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #CED2DC; */
+  color: #CED2DC;
+}
+
+.blogs-post-header {
+  display: flex;
+  padding: 0 1rem;
+}
+
+.blogs-post-header > div {
+  display: flex;
+  background-color:#F2F5FA;
+  align-items: center;
+}
+
+
+.blogs-post-header > h2{
+  font-size: 2.5rem;
+  padding: 0 1rem;
+}
+
+.blog-description-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.blog-discription {
+  background-color: #2A2522;
+  padding: .5rem 1rem;
+}
+
+.blog-stats {
+  display: flex;
+  background-color: #F2F5FA;
+  opacity: .5;
+  color: #2A2522;
+  justify-content: space-around;
+}
+
+.blog-likes {
+  display: flex;
+}
+.blog-comments {
+  display: flex;
+}
+
+
+/*                         */
+/*   END END END END END   */               
+/* CSS FOR BLOG PAGE ONLY  */
+/*                         */
+/*                         */
+
+
+
+.logos-container {
+  width: 50%;
+}
+
+
+
+#logos-container {
+  margin-bottom: 4rem;
+}
+
+/*        */
+/*        */
+/* FOOTER */
+/*        */  
+/*        */
+
+.component-footer {
+  background-color: #2A2522;
+  color: #F2F5FA;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.copyright {
+  margin: 0;
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+}
+
+.footer-logos-container {
+  display: flex;
+  justify-content: space-around;
   padding: 1rem;
-  background-color: white;
+  width: 50%;
 }
 
-
-
+#contact-us{
+  font-size: 1.5rem;
+}
 
 
 
@@ -375,4 +586,12 @@ ul {
   .profile-card img {
     width: 80%;
   }
+}
+
+
+
+.react-video-player {
+  background-color: #2A2522;
+  opacity: .2;
+  position: absolute;
 }
