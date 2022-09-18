@@ -80,10 +80,10 @@ export const Home = () => {
   useEffect(()=> {
     const fetchAllNews = async()=> {
       await Promise.all([
-        // await fetchNYTimes(),
-        // await fetchGuardian(),
-        // await fetchMediastack(),
-        await fetchNewsApi()
+        await fetchNYTimes(),
+        await fetchGuardian(),
+        await fetchMediastack(),
+        // await fetchNewsApi()
       ])
     }
     fetchAllNews()

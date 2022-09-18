@@ -76,6 +76,7 @@ a {
   padding: 0;
   color: #CED2DC;
   text-align: center;
+
 }
 
 .banner h1 {
@@ -460,7 +461,7 @@ ul {
 
 .blogs-wrapper {
   border-bottom: black 1.5px solid;
-  padding-top: 1rem;
+  padding: 1rem 0;
 }
 
 .blogs-post {
@@ -499,10 +500,11 @@ ul {
 
 .blog-stats {
   display: flex;
-  background-color: #F2F5FA;
+  /* background-color: #F2F5FA; */
   opacity: .5;
-  color: #2A2522;
-  justify-content: space-around;
+  /* color: #2A2522; */
+  justify-content: flex-start;
+
 }
 
 .blog-likes {
