@@ -1,6 +1,8 @@
 import React from 'react'
 import GithubIcon from '../../images/github-icon.svg'
 import NonyaNews from '../../images/nonyaNewsLogo.png'
+import { AiOutlineShareAlt, AiOutlineComment, AiFillCaretUp, AiFillCaretDown } from 'react-icons/ai'
+
 export const Blogs = () => {
   return (
     <div className='blogs-component'>
@@ -20,17 +22,16 @@ export const Blogs = () => {
           </div>
           <div className='blog-stats'>
             <div className='blog-likes'>
-              <img src={GithubIcon} alt="Github"  />
+              <AiFillCaretDown size={50}/>
               <p>19820</p>
-              <img src={GithubIcon} alt="Github"  />
+              <AiFillCaretUp size={50}/>
             </div>
             <div className='blog-comments'>
-              <img src={GithubIcon} alt="Github"  />
-              <p>76</p>
+              <AiOutlineComment size={50}/>
             </div>
-            <img src={GithubIcon} alt="Github"  />
-
+            <AiOutlineShareAlt size={50}/>
           </div>
+          <p>5 hours ago</p>
         </div>
       </div>
       
@@ -47,16 +48,14 @@ export const Blogs = () => {
           </div>
           <div className='blog-stats'>
             <div className='blog-likes'>
-              <img src={GithubIcon} alt="Github"  />
-              <p>19820</p>
-              <img src={GithubIcon} alt="Github"  />
+              <AiFillCaretDown size={50}/>
+              <p>4562</p>
+              <AiFillCaretUp size={50}/>
             </div>
             <div className='blog-comments'>
-              <img src={GithubIcon} alt="Github"  />
-              <p>76</p>
+              <AiOutlineComment size={50}/>
             </div>
-            <img src={GithubIcon} alt="Github"  />
-
+            <AiOutlineShareAlt size={50}/>
           </div>
         </div>
       </div>
